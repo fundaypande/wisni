@@ -8,10 +8,10 @@
    $id_user = $_SESSION["user"]["id"];
 
 if(!empty($_POST["add_record"])) {
-	$sql = "INSERT INTO ttanaman ( id_tanaman, nama, keterangan, id ) VALUES ( NULL, :nama, :keterangan, $id_user)";
+	$sql = "INSERT INTO tpengolahan ( id_pengolahan, nama, keterangan, id_tanaman ) VALUES ( NULL, :nama, :keterangan, :tanaman)";
 	$pdo_statement = $db->prepare( $sql );
 
-	$result = $pdo_statement->execute( array( ':nama'=>$_POST['nama'], ':keterangan'=>$_POST['ket'] ) );
+	$result = $pdo_statement->execute( array( ':nama'=>$_POST['nama'], ':keterangan'=>$_POST['ket'], ':tanaman'=>$_POST['tanaman'] ) );
 	if (!empty($result) ){
     echo '<script language="javascript">';
     echo 'alert("Tanaman Berhasil Diinputkan")';
@@ -26,7 +26,7 @@ if(!empty($_POST["add_record"])) {
 <form name="frmAdd" action="" method="POST">
 
   <div class="dropdown">
-  <select class="form-control" id="sel1">
+  <select class="form-control" name="tanaman">
     <option>Pilih Jenis Tanaman</option>
 
     <?php
@@ -50,13 +50,13 @@ if(!empty($_POST["add_record"])) {
 
   <div class="class="form-group"">
     <div class="demo-form-row">
-  	  <label>Nama: </label><br>
+  	  <label>Nama Pengolahan: </label><br>
   	  <input type="text" name="nama" class="form-control" required />
     </div>
   </div>
   <div class="class="form-group"">
     <div class="demo-form-row">
-  	  <label>Budidaya: </label><br>
+  	  <label>Keterangan: </label><br>
       <textarea name="ket" class="form-control"  rows="5" required ></textarea>
     </div>
   </div>

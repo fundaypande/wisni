@@ -32,10 +32,10 @@
     <td><?php echo $row["nama"]; ?></td>
 		<td><?php echo $row["keterangan"]; ?></td>
 		<td>
-      <a style="color:blue" class="ajax-action-links" href="jenis_tanaman_edit.php?id=<?php echo $row['id_tanaman']; ?>">
+      <a style="color:blue" class="ajax-action-links" href="pengolahan_edit.php?id=<?php echo $row['id_pengolahan']; ?>">
         Edit
       </a>
-      <a style="color: red" class="ajax-action-links" onclick="return  confirm('Apakah anda yakin ingin menghapus?')" href='jenis_tanaman_delete.php?id=<?php echo $row['id_tanaman']; ?>'>
+      <a style="color: red" class="ajax-action-links" onclick="return  confirm('Apakah anda yakin ingin menghapus?')" href='pengolahan_delete.php?id=<?php echo $row['id_pengolahan']; ?>'>
         Delete
       </a>
     </td>
