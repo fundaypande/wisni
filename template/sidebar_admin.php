@@ -24,7 +24,7 @@
                         <a class="nav-link" href="pengolahan.php" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Info Pengolahan <span class="badge badge-success">6</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Info Jenis Penyakit <span class="badge badge-success">6</span></a>
+                        <a class="nav-link" href="penyakit.php" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Info Jenis Penyakit <span class="badge badge-success">6</span></a>
                     </li>
 
                 </ul>

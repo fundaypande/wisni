@@ -26,7 +26,7 @@
 		foreach($result as $row) {
 	?>
 	  <tr class="table-row">
-		<td><?php echo $row["id_tanaman"]; ?></td>
+		<td><a href="show_tanaman.php?id=<?php echo $row['id_tanaman']; ?>"><?php echo $row["id_tanaman"]; ?></a></td>
 		<td><?php echo $row["nama"]; ?></td>
 		<td><?php echo $row["keterangan"]; ?></td>
 		<td>
@@ -35,6 +35,9 @@
       </a>
       <a style="color: red" class="ajax-action-links" onclick="return  confirm('Apakah anda yakin ingin menghapus?')" href='jenis_tanaman_delete.php?id=<?php echo $row['id_tanaman']; ?>'>
         Delete
+      </a>
+      <a style="color: green" class="ajax-action-links" href='show_tanaman.php?id=<?php echo $row['id_tanaman']; ?>'>
+        Show
       </a>
     </td>
 	  </tr>
