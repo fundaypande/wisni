@@ -1,0 +1,197 @@
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+aspnet+bash+basic+c+csharp+cpp+coffeescript+ruby+css-extras+diff+elixir+fsharp+git+go+graphql+haskell+java+json+julia+kotlin+latex+less+makefile+markdown+matlab+nasm+nim+objectivec+pascal+perl+php+php-extras+powershell+processing+python+r+jsx+crystal+rust+sass+scala+sql+swift+twig+vbnet+vim+yaml&plugins=keep-markup */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400,300);
+
+ ::-moz-selection { background: rgba(0,0,0,0.2); }
+ ::selection { background: rgba(0,0,0,0.2); }
+
+
+ .circle, .home-circle {
+   position: relative;
+   margin: 0 auto 3em;
+   height: 9em;
+   width: 9em;
+   border-radius: 50%;
+   background: #999 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42863/profile/profile-512_5.jpg) 80% 0%;
+   background-size: 10em 10em;
+   box-shadow: 0 0 0 0.8em rgba(255,255,255,0.3);
+ }
+ .circle {
+   margin: -2.5em auto 0;
+   height: 4em;
+   width: 4em;
+   background: #999 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42863/profile/profile-512_5.jpg) 70% 0%;
+   background-size: 4.5em 4.5em;
+   box-shadow: 0 0 0 0.4em rgba(255,255,255,0.3);
+ }
+ .home-circle:before, .home-circle:after, .circle:before, .circle:after {
+   position: absolute;
+   content: 'Web Developer';
+   width: 8.5em;
+   font-size: 1.7em;
+   top: 2em;
+   right: 6em;
+   font-weight: 700;
+ }
+ .circle:before, .circle:after {
+   font-size: 1.2em;
+   top: 1em;
+   right: 4em;
+ }
+ .circle:after, .home-circle:after {
+   content: 'Graphic Designer';
+   left: 7.25em;
+ }
+ .circle:after {
+   left: 5em;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 1rem 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
