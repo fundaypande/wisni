@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 03, 2018 at 05:03 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.0.32
+-- Host: 127.0.0.1
+-- Generation Time: Dec 04, 2018 at 08:52 AM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wisni2`
+-- Database: `wisni`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +34,15 @@ CREATE TABLE `gambar` (
   `keterangan` text NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gambar`
+--
+
+INSERT INTO `gambar` (`id_gambar`, `url`, `keterangan`, `id_user`) VALUES
+(7, 'images/Screenshot (1).png', 'image/png', 6),
+(8, 'images/Screenshot (2).png', 'image/png', 6),
+(9, 'images/Screenshot (3).png', 'image/png', 7);
 
 -- --------------------------------------------------------
 
@@ -56,7 +65,8 @@ INSERT INTO `tpengolahan` (`id_pengolahan`, `nama`, `keterangan`, `id_tanaman`) 
 (23, 'Tumbuk', 'Tumbuk aja terus', 22),
 (24, 'Bejek', 'Bejek terus', 22),
 (25, 'Di Uyeg', 'Uyeg Terus', 21),
-(27, 'Di Blender', 'Blender Terus', 21);
+(27, 'Di Blender', 'Blender Terus', 21),
+(28, 'Di Incuk', 'Incuk terus', 22);
 
 -- --------------------------------------------------------
 
@@ -127,7 +137,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `photo`, `ro
 (3, 'petanikode', 'info@petanikode.com', '$2y$10$uXa.Hz9rr8gkv4ztaqf6FO84iW64gXHbeyEOy1tIQ5wmqMjTk0yQa', 'Petani Kode', 'default.svg', ''),
 (4, 'pande', 'funday820@gmail.com', '$2y$10$jRU.6sB.u873z7J90eOzMeZl872vJT.UTRqS9oFvkrrxluAJzplXq', 'Komang Sudana Yasa Pande', 'default.svg', ''),
 (5, 'funday', 'funday820@gmail.com', '$2y$10$p6imrNZvC2muCCKwX3hzY.mDIgrDh3M9TUBIXV/CYbodE0GGb6hm6', 'Komang Sudana Yasa Pande', 'default.svg', 'admin'),
-(6, 'user', 'user@user.com', '$2y$10$GHwfze.zwYO9Nh2RgTctNepnm1rbszBknjRl2d1nUTngx7DBXCVQa', 'user', 'default.svg', 'user');
+(6, 'user', 'user@user.com', '$2y$10$GHwfze.zwYO9Nh2RgTctNepnm1rbszBknjRl2d1nUTngx7DBXCVQa', 'user', 'default.svg', 'user'),
+(7, 'wisni', 'wisni@wisni.com', '$2y$10$CvkIx5s4ow41FY9eu3qE6eeNgwQlvEry6v24gvurYhkgi2iGgrn9W', 'wisni', 'default.svg', 'user');
 
 --
 -- Indexes for dumped tables
@@ -176,13 +187,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tpengolahan`
 --
 ALTER TABLE `tpengolahan`
-  MODIFY `id_pengolahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_pengolahan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tpenyakit`
@@ -200,11 +211,17 @@ ALTER TABLE `ttanaman`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `gambar`
+--
+ALTER TABLE `gambar`
+  ADD CONSTRAINT `gambar_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `tpengolahan`
