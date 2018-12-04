@@ -14,7 +14,7 @@ if(!empty($_POST["add_record"])) {
 	$result = $pdo_statement->execute( array( ':nama'=>$_POST['nama'], ':keterangan'=>$_POST['ket'], ':tanaman'=>$_POST['tanaman'] ) );
 	if (!empty($result) ){
     echo '<script language="javascript">';
-    echo 'alert("Penyakit Berhasil Diinputkan")';
+    echo 'alert("Gambar Berhasil Diinputkan")';
     echo '</script>';
 	}
 }

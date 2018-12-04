@@ -2,7 +2,7 @@
 <?php
   require_once("config.php");
    include('template/header.php');
-   include('template/sidebar_admin.php');
+   include('template/sidebar_user.php');
 ?>
 
 
