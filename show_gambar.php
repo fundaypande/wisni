@@ -1,4 +1,4 @@
-<?php require_once("auth.php"); ?>
+
 <?php
   require_once("config.php");
    include('template/header.php');
@@ -7,7 +7,7 @@
 <body>
 <?php
   $idUser = $_GET['id'];
-	$pdo_statement = $db->prepare("SELECT * FROM gambar WHERE id_user = $idUser ORDER BY id_gambar DESC");
+	$pdo_statement = $db->prepare("SELECT * FROM gambar WHERE id_gambar = $idUser");
 	$pdo_statement->execute();
 	$result = $pdo_statement->fetchAll();
 ?>

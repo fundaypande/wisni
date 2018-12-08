@@ -1,6 +1,5 @@
 <?php
 // Load file koneksi.php
-require_once("auth.php");
 require_once("config.php");
  include('template/header.php');
  include('template/sidebar_user.php');
@@ -13,7 +12,7 @@ $tmp_file = $_FILES['gambar']['tmp_name'];
 
 // Set path folder tempat menyimpan gambarnya
 $path = "images/".$nama_file;
-$goto = 'window.location.href="show_gambar.php?id=' . $_SESSION["user"]["id"]  . '";';
+
 if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){ // Cek apakah tipe file yang diupload adalah JPG / JPEG / PNG
   // Jika tipe file yang diupload JPG / JPEG / PNG, lakukan :
   if($ukuran_file <= 2000000){ // Cek apakah ukuran file yang diupload kurang dari sama dengan 1MB
@@ -26,9 +25,27 @@ if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){ // Cek apakah tipe 
       $sql = "INSERT INTO gambar ( id_gambar, url, keterangan, id_user ) VALUES ( NULL, :url, :keterangan, :user)";
     	$pdo_statement = $db->prepare( $sql );
 
-    	$result = $pdo_statement->execute( array( ':url'=>$path, ':keterangan'=>$tipe_file, ':user'=>$_SESSION["user"]["id"] ) );
+    	$result = $pdo_statement->execute( array( ':url'=>$path, ':keterangan'=>$tipe_file, ':user'=>"1" ) );
 
       if (!empty($result) ){
+
+        // mengambil niai max gambarnya
+        $sql = "SELECT max(id_gambar) AS gambar FROM gambar WHERE 1";
+        $stmt = $db->prepare($sql);
+
+        // bind parameter ke query
+        $params = array(
+            ":id" => "1"
+        );
+
+        $stmt->execute($params);
+
+        $gambar = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+        $goto = 'window.location.href="show_gambar.php?id=' . $gambar["gambar"]  . '";';
+
         echo '<script language="javascript">';
         echo 'alert("Gambar Berhasil Diinputkan");';
         echo $goto;

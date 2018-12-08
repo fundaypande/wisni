@@ -17,7 +17,7 @@
                         <h1>Sistem Informasi Identifikasi Tanaman Obat</h1>
                         <div style="float: left">
                             <a href="#" class="btn btn-primary">Home</a>
-                            <a href="#" class="btn btn-primary">Informasi Tanaman</a>
+                            <a href="gambar_user.php" class="btn btn-primary">Informasi Tanaman</a>
                         </div>
                     </div>
                     <div class="col-md-4">
